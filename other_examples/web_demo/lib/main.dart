@@ -30,7 +30,8 @@ class MyApp extends StatefulWidget {
 }
 
 class MyAppState extends State<MyApp> {
-  ThemeMode themeMode = ThemeMode.dark;
+  //todo k: move this to a provider
+  ThemeMode themeMode = ThemeMode.light;
 
   @override
   Widget build(BuildContext context) {
@@ -76,15 +77,15 @@ class _MyHomePageState extends State<MyHomePage> {
   late CalendarComponents calendarComponents;
   late CalendarStyle calendarStyle;
   late CalendarLayoutDelegates<Event> calendarLayoutDelegates;
-
+  //note: 0 = vista dia, 1 = vista 2 dias, 2 = vista semana, 3 = vista semana laboral, 4 = vista mes, 5 = vista agenda, 6 = vista multi semana
   int currentConfiguration = 0;
   List<ViewConfiguration> viewConfigurations = [
     CustomMultiDayConfiguration(
-      name: 'Day',
+      name: 'Día',
       numberOfDays: 1,
     ),
     CustomMultiDayConfiguration(
-      name: 'Custom',
+      name: '2 días',
       numberOfDays: 2,
     ),
     WeekConfiguration(),
@@ -164,6 +165,7 @@ class _MyHomePageState extends State<MyHomePage> {
               return Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  //util: el uso de Flexible facilita el hacer responsive el diseño
                   Flexible(
                     flex: 3,
                     child: calendarWidget,

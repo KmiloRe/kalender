@@ -47,17 +47,19 @@ class _CalendarCustomizeState extends State<CalendarCustomize> {
 
   @override
   Widget build(BuildContext context) {
+    //todo k: comment but NOT delete the customization options
     return SingleChildScrollView(
       child: Column(
         children: [
           const ThemeTile(),
           if (widget.currentConfiguration is MultiDayViewConfiguration)
             SwitchListTile.adaptive(
-              title: const Text('Custom Layout Controller'),
+              title: const Text('Tipo de distribución'),
               value: customLayoutController,
               onChanged: (value) {
                 customLayoutController = value;
-
+                //todo k: maybe only allow custom layout for multi day view
+                //todo k: move this to a provider
                 if (value) {
                   widget.onCalendarLayoutChange(
                     CalendarLayoutDelegates<Event>(

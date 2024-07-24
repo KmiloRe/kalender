@@ -50,6 +50,7 @@ class CalendarHeader extends StatelessWidget {
               selectedDate,
             );
           },
+          //todo D: cambiar esto a español
           child: Text(
             dateFormat.format(calendarController.visibleMonth!),
             style: Theme.of(context).textTheme.titleLarge,
@@ -71,7 +72,8 @@ class CalendarHeader extends StatelessWidget {
                       calendarController.animateToPreviousPage();
                     },
                     icon: const Icon(Icons.chevron_left),
-                    tooltip: 'Previous Page',
+                    //todo D: check ortografia
+                    tooltip: 'Pagina anterior',
                   ),
                 ),
               if (viewConfigurations[currentConfiguration]

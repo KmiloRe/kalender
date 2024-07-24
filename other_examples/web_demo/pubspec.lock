@@ -86,9 +86,10 @@ packages:
   kalender:
     dependency: "direct main"
     description:
-      path: "../.."
-      relative: true
-    source: path
+      name: kalender
+      sha256: "1ccc220cb8db8506ac272622af65d347b675660e0817c85390917dda42481b41"
+      url: "https://pub.dev"
+    source: hosted
     version: "0.4.1"
   leak_tracker:
     dependency: transitive
