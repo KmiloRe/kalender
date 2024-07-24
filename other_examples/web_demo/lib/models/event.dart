@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+//todo k: modify this to better fit firebase
+//todo k: do a function that hardcodes a color 4 an assigned consultorio
 class Event {
   Event({
     required this.title,

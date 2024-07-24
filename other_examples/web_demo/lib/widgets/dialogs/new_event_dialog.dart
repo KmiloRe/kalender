@@ -39,6 +39,17 @@ class _NewEventDialogState extends State<NewEventDialog> {
                 widget.event.eventData?.copyWith(title: value);
           },
         ),
+        TextFormField(
+          initialValue: widget.event.eventData?.title,
+          decoration: const InputDecoration(
+            labelText: 'Titulo',
+            isDense: true,
+          ),
+          onChanged: (value) {
+            widget.event.eventData =
+                widget.event.eventData?.copyWith(title: value);
+          },
+        ),
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 16),
           child: DateTimeRangeEditor(
@@ -80,6 +91,23 @@ class _NewEventDialogState extends State<NewEventDialog> {
                 if (value == null) return;
                 widget.event.eventData =
                     widget.event.eventData?.copyWith(color: value);
+              },
+            ),
+            Spacer(),
+            //change this to <Consultorio> and add the dropdown menu entries
+            DropdownMenu<Color>(
+              label: const Text('Consultorio'),
+              initialSelection: widget.event.eventData?.color ?? Colors.blue,
+              dropdownMenuEntries: const [
+                DropdownMenuEntry(value: Colors.blue, label: 'azul'),
+                DropdownMenuEntry(value: Colors.green, label: 'verde'),
+                DropdownMenuEntry(value: Colors.red, label: 'rojo'),
+                DropdownMenuEntry(value: Colors.orange, label: 'naranja'),
+              ],
+              onSelected: (value) {
+                // if (value == null) return;
+                // widget.event.eventData =
+                //     widget.event.eventData?.copyWith(color: value);
               },
             )
           ],
