@@ -18,7 +18,10 @@ class MonthHeader extends StatelessWidget {
     final padding = style.padding ?? const EdgeInsets.symmetric(vertical: 2);
     final textStyle = style.textStyle ?? Theme.of(context).textTheme.bodySmall;
 
-    final dateText = style.stringBuilder?.call(date) ?? date.englishDayName;
+    //english
+    //final dateText = style.stringBuilder?.call(date) ?? date.englishDayName;
+    //spanish
+    final dateText = style.stringBuilder?.call(date) ?? date.spanishDayName;
 
     return Padding(
       padding: padding,

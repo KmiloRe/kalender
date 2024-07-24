@@ -34,8 +34,9 @@ class _EventEditDialogState extends State<EventEditDialog> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(widget.dialogTitle),
+          //! critical: esto es de cuidado, requiere confirmación
           IconButton.filledTonal(
-            tooltip: 'Delete Event',
+            tooltip: 'Borrar evento',
             onPressed: () {
               widget.deleteEvent(widget.event);
               Navigator.of(context).pop();
@@ -48,7 +49,7 @@ class _EventEditDialogState extends State<EventEditDialog> {
         TextFormField(
           initialValue: widget.event.eventData?.title,
           decoration: const InputDecoration(
-            labelText: 'Title',
+            labelText: 'Titulo',
             isDense: true,
           ),
           onChanged: (value) {
@@ -88,9 +89,10 @@ class _EventEditDialogState extends State<EventEditDialog> {
               label: const Text('Color'),
               initialSelection: widget.event.eventData?.color ?? Colors.blue,
               dropdownMenuEntries: const [
-                DropdownMenuEntry(value: Colors.blue, label: 'blue'),
-                DropdownMenuEntry(value: Colors.green, label: 'green'),
-                DropdownMenuEntry(value: Colors.red, label: 'red'),
+                DropdownMenuEntry(value: Colors.blue, label: 'azul'),
+                DropdownMenuEntry(value: Colors.green, label: 'verde'),
+                DropdownMenuEntry(value: Colors.red, label: 'rojo'),
+                DropdownMenuEntry(value: Colors.orange, label: 'naranja'),
               ],
               onSelected: (value) {
                 if (value == null) return;
@@ -110,14 +112,14 @@ class _EventEditDialogState extends State<EventEditDialog> {
                 Navigator.of(context).pop(false);
               },
               icon: const Icon(Icons.cancel),
-              label: const Text('Cancel'),
+              label: const Text('Cancelar'),
             ),
             TextButton.icon(
               onPressed: () {
                 Navigator.of(context).pop(true);
               },
               icon: const Icon(Icons.save),
-              label: const Text('Save'),
+              label: const Text('Guardar'),
             ),
           ],
         )

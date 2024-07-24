@@ -62,7 +62,7 @@ class _CalendarWidgetState extends State<CalendarWidget> {
     return CalendarEvent<Event>(
       dateTimeRange: dateTimeRange,
       eventData: Event(
-        title: 'New Event',
+        title: 'Nuevo Evento',
         color: Colors.blue,
       ),
     );
@@ -75,7 +75,7 @@ class _CalendarWidgetState extends State<CalendarWidget> {
       context: context,
       builder: (BuildContext context) {
         return NewEventDialog(
-          dialogTitle: 'Create Event',
+          dialogTitle: 'Crear Evento',
           event: event,
         );
       },
@@ -104,7 +104,7 @@ class _CalendarWidgetState extends State<CalendarWidget> {
         context: context,
         builder: (BuildContext context) {
           return EventEditDialog(
-            dialogTitle: 'Edit Event',
+            dialogTitle: 'Editar Evento',
             event: event,
             deleteEvent: widget.eventsController.removeEvent,
             cancelEdit: () => event.eventData = copyOfEvent.eventData,

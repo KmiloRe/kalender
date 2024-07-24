@@ -119,6 +119,7 @@ class ViewConfigurationCustomize extends StatelessWidget {
           Duration(minutes: 1),
           Duration(minutes: 10),
           Duration(minutes: 15),
+          Duration(minutes: 30),
         ],
         initialValue: config.verticalStepDuration,
         onChanged: (value) {

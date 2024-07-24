@@ -306,6 +306,59 @@ extension DateTimeExtensions on DateTime {
         return '';
     }
   }
+
+  // spanish
+  String get spanishDayName {
+    switch (weekday) {
+      case 1:
+        return 'Lun';
+      case 2:
+        return 'Mar';
+      case 3:
+        return 'Mier';
+      case 4:
+        return 'Jue';
+      case 5:
+        return 'Vie';
+      case 6:
+        return 'Sab';
+      case 7:
+        return 'Dom';
+      default:
+        return '';
+    }
+  }
+
+  String get spanishMonthName {
+    switch (month) {
+      case 1:
+        return 'Enero';
+      case 2:
+        return 'Febrero';
+      case 3:
+        return 'Marzo';
+      case 4:
+        return 'Abril';
+      case 5:
+        return 'Mayo';
+      case 6:
+        return 'Junio';
+      case 7:
+        return 'Julio';
+      case 8:
+        return 'Agosto';
+      case 9:
+        return 'Septiembre';
+      case 10:
+        return 'Octubrer';
+      case 11:
+        return 'Noviembre';
+      case 12:
+        return 'Deciembre';
+      default:
+        return '';
+    }
+  }
 }
 
 extension TimeOfDayExtension on TimeOfDay {

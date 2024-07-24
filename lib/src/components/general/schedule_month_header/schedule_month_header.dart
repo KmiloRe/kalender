@@ -18,8 +18,10 @@ class ScheduleMonthHeader extends StatelessWidget {
     final decoration = BoxDecoration(
       color: style.monthColors[date.month] ?? Colors.transparent,
     );
-
-    final monthName = date.englishMonthName;
+    //english
+    //final monthName = date.englishMonthName;
+    //spanish
+    final monthName = date.spanishMonthName;
     final text = style.stringBuilder?.call(date) ?? '${date.year} - $monthName';
     final textStyle = style.textStyle;
 

@@ -22,8 +22,10 @@ class DayHeader extends StatelessWidget {
       color: style.backgroundColor,
       borderRadius: style.borderRadius,
     );
-
-    final dateText = style.stringBuilder?.call(date) ?? date.englishDayName;
+    //english
+    //final dateText = style.stringBuilder?.call(date) ?? date.englishDayName;
+    //spanish
+    final dateText = style.stringBuilder?.call(date) ?? date.spanishDayName;
     final dateTextStyle =
         style.textStyle ?? Theme.of(context).textTheme.bodySmall;
 

@@ -19,8 +19,8 @@ class DateTimeRangeEditor extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 4),
           child: DateTimePicker(
-            title: 'From',
-            helpText: 'Select start date',
+            title: 'Desde',
+            helpText: 'Elije inicio',
             dateTime: dateTimeRange.start,
             onDateTimeChanged: onStartChanged,
             maxDateTime: dateTimeRange.end,
@@ -29,8 +29,8 @@ class DateTimeRangeEditor extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 4),
           child: DateTimePicker(
-            title: 'To',
-            helpText: 'Select end date',
+            title: 'Hasta',
+            helpText: 'Elije final',
             dateTime: dateTimeRange.end,
             onDateTimeChanged: onEndChanged,
             minDateTime: dateTimeRange.start,
@@ -106,7 +106,7 @@ class _DateTimePickerState extends State<DateTimePicker> {
                   ],
                   validator: (value) {
                     if (value == null || value.isEmpty) {
-                      return 'Please enter a value';
+                      return 'Requerido';
                     }
                     int hourValue = int.parse(value);
 
@@ -120,12 +120,12 @@ class _DateTimePickerState extends State<DateTimePicker> {
 
                     if (widget.minDateTime != null &&
                         newDateTime.isBefore(widget.minDateTime!)) {
-                      return 'Invalid';
+                      return 'Invalido';
                     }
 
                     if (widget.maxDateTime != null &&
                         newDateTime.isAfter(widget.maxDateTime!)) {
-                      return 'Invalid';
+                      return 'Invalido';
                     }
 
                     dateTime = newDateTime;
@@ -162,7 +162,7 @@ class _DateTimePickerState extends State<DateTimePicker> {
                   ],
                   validator: (value) {
                     if (value == null || value.isEmpty) {
-                      return 'Please enter a value';
+                      return 'Requerido';
                     }
                     int? minuteValue = int.parse(value);
 
@@ -176,12 +176,12 @@ class _DateTimePickerState extends State<DateTimePicker> {
 
                     if (widget.minDateTime != null &&
                         newDateTime.isBefore(widget.minDateTime!)) {
-                      return 'Invalid';
+                      return 'Invalido';
                     }
 
                     if (widget.maxDateTime != null &&
                         newDateTime.isAfter(widget.maxDateTime!)) {
-                      return 'Invalid';
+                      return 'Invalido';
                     }
 
                     dateTime = newDateTime;

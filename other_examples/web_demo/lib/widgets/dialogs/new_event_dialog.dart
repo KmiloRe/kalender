@@ -31,7 +31,7 @@ class _NewEventDialogState extends State<NewEventDialog> {
         TextFormField(
           initialValue: widget.event.eventData?.title,
           decoration: const InputDecoration(
-            labelText: 'Title',
+            labelText: 'Titulo',
             isDense: true,
           ),
           onChanged: (value) {
@@ -71,9 +71,10 @@ class _NewEventDialogState extends State<NewEventDialog> {
               label: const Text('Color'),
               initialSelection: widget.event.eventData?.color ?? Colors.blue,
               dropdownMenuEntries: const [
-                DropdownMenuEntry(value: Colors.blue, label: 'blue'),
-                DropdownMenuEntry(value: Colors.green, label: 'green'),
-                DropdownMenuEntry(value: Colors.red, label: 'red'),
+                DropdownMenuEntry(value: Colors.blue, label: 'azul'),
+                DropdownMenuEntry(value: Colors.green, label: 'verde'),
+                DropdownMenuEntry(value: Colors.red, label: 'rojo'),
+                DropdownMenuEntry(value: Colors.orange, label: 'naranja'),
               ],
               onSelected: (value) {
                 if (value == null) return;
@@ -92,14 +93,14 @@ class _NewEventDialogState extends State<NewEventDialog> {
                 Navigator.of(context).pop();
               },
               icon: const Icon(Icons.cancel),
-              label: const Text('Cancel'),
+              label: const Text('Cancelar'),
             ),
             TextButton.icon(
               onPressed: () {
                 Navigator.of(context).pop(widget.event);
               },
               icon: const Icon(Icons.save),
-              label: const Text('Save'),
+              label: const Text('Guardar'),
             ),
           ],
         )

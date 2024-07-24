@@ -130,7 +130,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return CalendarEvent(
       dateTimeRange: dateTimeRange,
       eventData: Event(
-        title: 'New Event',
+        title: 'Nuevo Evento',
       ),
     );
   }
@@ -178,7 +178,7 @@ class _MyHomePageState extends State<MyHomePage> {
           : color.withAlpha(100),
       child: Center(
         child: configuration.tileType != TileType.ghost
-            ? Text(event.eventData?.title ?? 'New Event')
+            ? Text(event.eventData?.title ?? 'Nuevo Evento')
             : null,
       ),
     );
@@ -197,7 +197,7 @@ class _MyHomePageState extends State<MyHomePage> {
           : color,
       child: Center(
         child: configuration.tileType != TileType.ghost
-            ? Text(event.eventData?.title ?? 'New Event')
+            ? Text(event.eventData?.title ?? 'Nuevo Evento')
             : null,
       ),
     );
@@ -209,7 +209,7 @@ class _MyHomePageState extends State<MyHomePage> {
         color: event.eventData?.color ?? Colors.blue,
         borderRadius: BorderRadius.circular(8),
       ),
-      child: Text(event.eventData?.title ?? 'New Event'),
+      child: Text(event.eventData?.title ?? 'Nuevo Evento'),
     );
   }
 
