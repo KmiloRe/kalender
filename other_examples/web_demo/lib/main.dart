@@ -13,8 +13,10 @@ import 'package:web_demo/widgets/customize/calendar_customize.dart';
 import 'package:web_demo/widgets/customize/view_customize.dart';
 
 void main() async {
+  //? duda jose: do I need this?
   final locale = await findSystemLocale();
   Intl.defaultLocale = locale;
+  //? Could this cause a problem with data from firebase to pcs with diferent DateFormatting?
   await initializeDateFormatting(locale);
   runApp(const MyApp());
 }
@@ -155,9 +157,9 @@ class _MyHomePageState extends State<MyHomePage> {
               },
             );
 
-            final viewConfigurationCustomize = ViewConfigurationCustomize(
-              currentConfiguration: viewConfigurations[currentConfiguration],
-            );
+            // final viewConfigurationCustomize = ViewConfigurationCustomize(
+            //   currentConfiguration: viewConfigurations[currentConfiguration],
+            // );
 
             if (constraints.maxWidth < 500) {
               return calendarWidget;
@@ -177,7 +179,8 @@ class _MyHomePageState extends State<MyHomePage> {
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           calendarCustomize,
-                          viewConfigurationCustomize,
+                          //todo D & K: check if this level of customization is needed
+                          //viewConfigurationCustomize,
                         ],
                       ),
                     ),
