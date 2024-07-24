@@ -54,6 +54,8 @@ class CalendarHeader extends StatelessWidget {
           child: Text(
             dateFormat.format(calendarController.visibleMonth!),
             style: Theme.of(context).textTheme.titleLarge,
+            //this needs more work to be fully localized
+            //locale: const Locale('es'),
           ),
         );
 
