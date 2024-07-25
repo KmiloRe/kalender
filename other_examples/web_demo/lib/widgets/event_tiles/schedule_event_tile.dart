@@ -11,6 +11,8 @@ class ScheduleTile extends StatelessWidget {
   final CalendarEvent<Event> event;
   final DateTime date;
 
+//todo k: change this to just use consultorio
+
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -18,7 +20,8 @@ class ScheduleTile extends StatelessWidget {
       child: ListTile(
         title: Text(event.eventData?.title ?? ''),
         subtitle: Text(
-          event.eventData?.description ?? '',
+          //event.eventData?.description ?? '',
+          event.eventData?.consultorio!.title ?? '',
           maxLines: 2,
           overflow: TextOverflow.ellipsis,
         ),

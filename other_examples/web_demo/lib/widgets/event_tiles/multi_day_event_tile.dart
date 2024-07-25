@@ -15,6 +15,7 @@ class MultiDayEventTile extends StatelessWidget {
   final bool continuesBefore;
   final bool continuesAfter;
 
+//todo k: change this to just use consultorio
   @override
   Widget build(BuildContext context) {
     return Padding(

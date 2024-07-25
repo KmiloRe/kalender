@@ -110,7 +110,23 @@ class _NewEventDialogState extends State<NewEventDialog> {
             //         widget.event.eventData?.copyWith(color: value);
             //   },
             // ),
-            Spacer(),
+            DropdownMenu<Consultorio>(
+              label: const Text('Profesional'),
+              initialSelection:
+                  widget.event.eventData?.consultorio ?? Consultorio.ninguno,
+              //? duda jose: esto esta bien hecho asi?
+              dropdownMenuEntries: consultorios.map((consultorio) {
+                return DropdownMenuEntry(
+                    value: consultorio, label: consultorio.title.toString());
+              }).toList(),
+
+              onSelected: (value) {
+                if (value == null) return;
+                widget.event.eventData =
+                    widget.event.eventData?.copyWith(consultorio: value);
+              },
+            ),
+            const Spacer(),
             //change this to <Consultorio> and add the dropdown menu entries
             DropdownMenu<Consultorio>(
               label: const Text('Consultorio'),
@@ -119,7 +135,7 @@ class _NewEventDialogState extends State<NewEventDialog> {
               //? duda jose: esto esta bien hecho asi?
               dropdownMenuEntries: consultorios.map((consultorio) {
                 return DropdownMenuEntry(
-                    value: consultorio, label: consultorio.toString());
+                    value: consultorio, label: consultorio.title.toString());
               }).toList(),
 
               onSelected: (value) {

@@ -47,7 +47,8 @@ class EventTile extends StatelessWidget {
                   ),
                   const TextSpan(text: '\n'),
                   TextSpan(
-                    text: event.eventData?.description ?? '',
+                    //text: event.eventData?.description ?? '',
+                    text: event.eventData?.consultorio!.title ?? '',
                     style: Theme.of(context).textTheme.bodySmall,
                   ),
                 ]),
