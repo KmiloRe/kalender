@@ -15,15 +15,12 @@ import 'package:web_demo/widgets/customize/calendar_customize.dart';
 import 'package:web_demo/widgets/customize/view_customize.dart';
 
 void main() async {
-  //? duda jose: do I need this?
+  //util: es con esto que puedo adaptar el idioma según la configuración del sistemas
   //final locale = await findSystemLocale();
-
-  //? Could this cause a problem with data from firebase to pcs with diferent DateFormatting?
-
-  final locale = 'es_US';
+  const locale = 'es_US';
   Intl.defaultLocale = locale;
   await initializeDateFormatting(locale);
-  print('\n\n\n\nlocale: $locale' + '\n\n\n\n');
+  //print('\n\n\n\nlocale: $locale' + '\n\n\n\n');
   runApp(const MyApp());
 }
 
@@ -84,6 +81,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   late CalendarComponents calendarComponents;
   late CalendarStyle calendarStyle;
+  //todo k & D: me gusta mucho el otro layout, eventualmente quiero dejarlo por defecto, pero no entiendo aun
   late CalendarLayoutDelegates<Event> calendarLayoutDelegates;
   //note: 0 = vista dia, 1 = vista 2 dias, 2 = vista semana, 3 = vista semana laboral, 4 = vista mes, 5 = vista agenda, 6 = vista multi semana
   int currentConfiguration = 0;
@@ -147,21 +145,21 @@ class _MyHomePageState extends State<MyHomePage> {
               },
             );
 
-            final calendarCustomize = CalendarCustomize(
-              currentConfiguration: viewConfigurations[currentConfiguration],
-              style: calendarStyle,
-              layoutDelegates: calendarLayoutDelegates,
-              onStyleChange: (newStyle) {
-                setState(() {
-                  calendarStyle = newStyle;
-                });
-              },
-              onCalendarLayoutChange: (newLayout) {
-                setState(() {
-                  calendarLayoutDelegates = newLayout;
-                });
-              },
-            );
+            // final calendarCustomize = CalendarCustomize(
+            //   currentConfiguration: viewConfigurations[currentConfiguration],
+            //   style: calendarStyle,
+            //   layoutDelegates: calendarLayoutDelegates,
+            //   onStyleChange: (newStyle) {
+            //     setState(() {
+            //       calendarStyle = newStyle;
+            //     });
+            //   },
+            //   onCalendarLayoutChange: (newLayout) {
+            //     setState(() {
+            //       calendarLayoutDelegates = newLayout;
+            //     });
+            //   },
+            // );
 
             // final viewConfigurationCustomize = ViewConfigurationCustomize(
             //   currentConfiguration: viewConfigurations[currentConfiguration],
@@ -178,19 +176,19 @@ class _MyHomePageState extends State<MyHomePage> {
                     flex: 3,
                     child: calendarWidget,
                   ),
-                  Flexible(
-                    flex: 1,
-                    child: SingleChildScrollView(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          calendarCustomize,
-                          //todo D & K: check if this level of customization is needed
-                          //viewConfigurationCustomize,
-                        ],
-                      ),
-                    ),
-                  ),
+                  // Flexible(
+                  //   flex: 1,
+                  //   child: SingleChildScrollView(
+                  //     child: Column(
+                  //       mainAxisAlignment: MainAxisAlignment.start,
+                  //       children: [
+                  //         calendarCustomize,
+                  //         //todo D & K: check if this level of customization is needed
+                  //         //viewConfigurationCustomize,
+                  //       ],
+                  //     ),
+                  //   ),
+                  // ),
                 ],
               );
             }

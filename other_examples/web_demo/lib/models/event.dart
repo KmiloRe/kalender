@@ -72,7 +72,7 @@ enum Consultorio {
   ninguno(
     title: "Ninguno",
     content: "No se ha asignado un consultorio",
-    color: Colors.grey,
+    color: Colors.greenAccent,
   );
 
   final String content;
