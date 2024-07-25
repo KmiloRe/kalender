@@ -2,6 +2,7 @@ import 'dart:math';
 import 'package:web_demo/models/event.dart';
 import 'package:flutter/material.dart';
 import 'package:kalender/kalender.dart';
+//todo k: this hole file should be a provider from firebase
 
 List<CalendarEvent<Event>> generateCalendarEvents() {
   List<CalendarEvent<Event>> events = [];

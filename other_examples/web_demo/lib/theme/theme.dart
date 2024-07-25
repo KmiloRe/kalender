@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+//todo D: change this to better fit our colors, maybe just the main colors (background and surface and their variants) and leave the rest as is
 const lightColorScheme = ColorScheme(
   brightness: Brightness.light,
   primary: Color(0xFF6750A4),

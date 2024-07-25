@@ -3,6 +3,8 @@ import 'package:web_demo/widgets/dialogs/date_time_range_editor.dart';
 import 'package:flutter/material.dart';
 import 'package:kalender/kalender.dart';
 
+//todo k: I think this is unnecessary, maybe just use the enum from Event
+//? duda jose: should I use the enum from Event?
 List<Consultorio> consultorios = [
   Consultorio.consultorio_1,
   Consultorio.consultorio_2,
@@ -57,14 +59,14 @@ class _NewEventDialogState extends State<NewEventDialog> {
           },
         ),
         TextFormField(
-          initialValue: widget.event.eventData?.profesional,
+          initialValue: widget.event.eventData?.description,
           decoration: const InputDecoration(
-            labelText: 'Profesional',
+            labelText: 'Descripcion',
             isDense: true,
           ),
           onChanged: (value) {
             widget.event.eventData =
-                widget.event.eventData?.copyWith(profesional: value);
+                widget.event.eventData?.copyWith(description: value);
           },
         ),
         Padding(
@@ -95,37 +97,23 @@ class _NewEventDialogState extends State<NewEventDialog> {
         ),
         Row(
           children: [
-            // DropdownMenu<Color>(
-            //   label: const Text('Color'),
-            //   initialSelection: widget.event.eventData?.color ?? Colors.blue,
-            //   dropdownMenuEntries: const [
-            //     DropdownMenuEntry(value: Colors.blue, label: 'azul'),
-            //     DropdownMenuEntry(value: Colors.green, label: 'verde'),
-            //     DropdownMenuEntry(value: Colors.red, label: 'rojo'),
-            //     DropdownMenuEntry(value: Colors.orange, label: 'naranja'),
-            //   ],
+            //? duda david: esto si tiene valor para ellos?
+            // DropdownMenu<Consultorio>(
+            //   label: const Text('Profesional'),
+            //   initialSelection:
+            //       widget.event.eventData?.consultorio ?? Consultorio.ninguno,
+            //   //? duda jose: esto esta bien hecho asi?
+            //   dropdownMenuEntries: consultorios.map((consultorio) {
+            //     return DropdownMenuEntry(
+            //         value: consultorio, label: consultorio.title.toString());
+            //   }).toList(),
+
             //   onSelected: (value) {
             //     if (value == null) return;
             //     widget.event.eventData =
-            //         widget.event.eventData?.copyWith(color: value);
+            //         widget.event.eventData?.copyWith(consultorio: value);
             //   },
             // ),
-            DropdownMenu<Consultorio>(
-              label: const Text('Profesional'),
-              initialSelection:
-                  widget.event.eventData?.consultorio ?? Consultorio.ninguno,
-              //? duda jose: esto esta bien hecho asi?
-              dropdownMenuEntries: consultorios.map((consultorio) {
-                return DropdownMenuEntry(
-                    value: consultorio, label: consultorio.title.toString());
-              }).toList(),
-
-              onSelected: (value) {
-                if (value == null) return;
-                widget.event.eventData =
-                    widget.event.eventData?.copyWith(consultorio: value);
-              },
-            ),
             const Spacer(),
             //change this to <Consultorio> and add the dropdown menu entries
             DropdownMenu<Consultorio>(

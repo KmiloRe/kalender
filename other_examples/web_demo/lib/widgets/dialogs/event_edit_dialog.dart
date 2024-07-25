@@ -3,6 +3,25 @@ import 'package:web_demo/widgets/dialogs/date_time_range_editor.dart';
 import 'package:flutter/material.dart';
 import 'package:kalender/kalender.dart';
 
+//todo k: I think this is unnecessary, maybe just use the enum from Event
+//? duda jose: should I use the enum from Event?
+List<Consultorio> consultorios = [
+  Consultorio.consultorio_1,
+  Consultorio.consultorio_2,
+  Consultorio.consultorio_3,
+  Consultorio.consultorio_4,
+  Consultorio.consultorio_5,
+  Consultorio.consultorio_6,
+  Consultorio.consultorio_7,
+  Consultorio.consultorio_8,
+  Consultorio.consultorio_9,
+  Consultorio.consultorio_10,
+  Consultorio.consultorio_11,
+  Consultorio.consultorio_12,
+  Consultorio.ninguno,
+  Consultorio.administracion
+];
+
 class EventEditDialog extends StatefulWidget {
   const EventEditDialog({
     super.key,
@@ -15,6 +34,7 @@ class EventEditDialog extends StatefulWidget {
   final String dialogTitle;
   final CalendarEvent<Event> event;
   final void Function(CalendarEvent<Event> event) deleteEvent;
+  //? duda jose: this is a void callback, how does this work?
   final VoidCallback cancelEdit;
 
   @override
@@ -34,7 +54,8 @@ class _EventEditDialogState extends State<EventEditDialog> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(widget.dialogTitle),
-          //! critical: esto es de cuidado, requiere confirmación
+          //! critical: esto es de cuidado, deberia pedir confirmación?
+          //* O quiza deberia ser solo para punto y admin
           IconButton.filledTonal(
             tooltip: 'Borrar evento',
             onPressed: () {
@@ -100,6 +121,22 @@ class _EventEditDialogState extends State<EventEditDialog> {
             //         widget.event.eventData?.copyWith(color: value);
             //   },
             // )
+            DropdownMenu<Consultorio>(
+              label: const Text('Consultorio'),
+              initialSelection:
+                  widget.event.eventData?.consultorio ?? Consultorio.ninguno,
+              //? duda jose: esto esta bien hecho asi?
+              dropdownMenuEntries: consultorios.map((consultorio) {
+                return DropdownMenuEntry(
+                    value: consultorio, label: consultorio.title.toString());
+              }).toList(),
+
+              onSelected: (value) {
+                if (value == null) return;
+                widget.event.eventData =
+                    widget.event.eventData?.copyWith(consultorio: value);
+              },
+            )
           ],
         ),
         const Divider(),
@@ -116,6 +153,7 @@ class _EventEditDialogState extends State<EventEditDialog> {
             ),
             TextButton.icon(
               onPressed: () {
+                //? duda jose: this might break the other app
                 Navigator.of(context).pop(true);
               },
               icon: const Icon(Icons.save),
