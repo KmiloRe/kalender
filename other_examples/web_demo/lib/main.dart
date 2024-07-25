@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:intl/find_locale.dart';
 import 'package:intl/intl.dart';
@@ -14,10 +16,14 @@ import 'package:web_demo/widgets/customize/view_customize.dart';
 
 void main() async {
   //? duda jose: do I need this?
-  final locale = await findSystemLocale();
-  Intl.defaultLocale = locale;
+  //final locale = await findSystemLocale();
+
   //? Could this cause a problem with data from firebase to pcs with diferent DateFormatting?
+
+  final locale = 'es_US';
+  Intl.defaultLocale = locale;
   await initializeDateFormatting(locale);
+  print('\n\n\n\nlocale: $locale' + '\n\n\n\n');
   runApp(const MyApp());
 }
 

@@ -9,6 +9,7 @@ import 'package:web_demo/widgets/dialogs/new_event_dialog.dart';
 import 'package:web_demo/widgets/event_tiles/event_tile.dart';
 import 'package:web_demo/widgets/event_tiles/multi_day_event_tile.dart';
 import 'package:web_demo/widgets/event_tiles/schedule_event_tile.dart';
+//todo k: change this to consumer stateful widget
 
 class CalendarWidget extends StatefulWidget {
   const CalendarWidget({
