@@ -15,8 +15,29 @@ List<CalendarEvent<Event>> generateCalendarEvents() {
     Colors.purple
   ];
 
+  List<Consultorio> consultorios = [
+    Consultorio.consultorio_1,
+    Consultorio.consultorio_2,
+    Consultorio.consultorio_3,
+    Consultorio.consultorio_4,
+    Consultorio.consultorio_5,
+    Consultorio.consultorio_6,
+    Consultorio.consultorio_7,
+    Consultorio.consultorio_8,
+    Consultorio.consultorio_9,
+    Consultorio.consultorio_10,
+    Consultorio.consultorio_11,
+    Consultorio.consultorio_12,
+    Consultorio.ninguno,
+    Consultorio.administracion
+  ];
+
   Color getRadomColor() {
     return colors[Random().nextInt(6)];
+  }
+
+  Consultorio getRadomConsultorio() {
+    return consultorios[Random().nextInt(14)];
   }
 
   int x = 0;
@@ -28,15 +49,15 @@ List<CalendarEvent<Event>> generateCalendarEvents() {
   }
 
   DateTime now = DateTime.now();
-  DateTime mondayNow = now.subtract(Duration(days: now.weekday - 1));
-  DateTime startOfMonday =
-      DateTime(mondayNow.year, mondayNow.month, mondayNow.day);
-  DateTime startOfTuesday = startOfMonday.add(const Duration(days: 1));
-  DateTime startOfWednesday = startOfMonday.add(const Duration(days: 2));
-  DateTime startOfThursday = startOfMonday.add(const Duration(days: 3));
-  DateTime startOfFriday = startOfMonday.add(const Duration(days: 4));
-  DateTime startOfSaturday = startOfMonday.add(const Duration(days: 5));
-  DateTime startOfSunday = startOfMonday.add(const Duration(days: 6));
+  // DateTime mondayNow = now.subtract(Duration(days: now.weekday - 1));
+  // DateTime startOfMonday =
+  //     DateTime(mondayNow.year, mondayNow.month, mondayNow.day);
+  // DateTime startOfTuesday = startOfMonday.add(const Duration(days: 1));
+  // DateTime startOfWednesday = startOfMonday.add(const Duration(days: 2));
+  // DateTime startOfThursday = startOfMonday.add(const Duration(days: 3));
+  // DateTime startOfFriday = startOfMonday.add(const Duration(days: 4));
+  // DateTime startOfSaturday = startOfMonday.add(const Duration(days: 5));
+  // DateTime startOfSunday = startOfMonday.add(const Duration(days: 6));
 
   events.addAll([
     CalendarEvent<Event>(
@@ -45,9 +66,20 @@ List<CalendarEvent<Event>> generateCalendarEvents() {
         end: now.add(Duration(hours: 1)),
       ),
       eventData: Event(
-        title: 'Consultorio ${getID()}',
-        description: 'C 2',
-        color: getRadomColor(),
+          title: 'Evento ${getID()}',
+          description: '',
+          // color: Consultorio.consultorio_2.color,
+          consultorio: Consultorio.consultorio_2),
+    ),
+    CalendarEvent<Event>(
+      dateTimeRange: DateTimeRange(
+        start: now,
+        end: now.add(Duration(hours: 1)),
+      ),
+      eventData: Event(
+        title: 'Evento ${getID()}',
+        description: '',
+        consultorio: getRadomConsultorio(),
       ),
     ),
     CalendarEvent<Event>(
@@ -56,9 +88,9 @@ List<CalendarEvent<Event>> generateCalendarEvents() {
         end: now.add(Duration(hours: 1)),
       ),
       eventData: Event(
-        title: 'Consultorio ${getID()}',
-        description: 'C 1',
-        color: getRadomColor(),
+        title: 'Evento ${getID()}',
+        description: '',
+        consultorio: getRadomConsultorio(),
       ),
     ),
     CalendarEvent<Event>(
@@ -67,20 +99,9 @@ List<CalendarEvent<Event>> generateCalendarEvents() {
         end: now.add(Duration(hours: 1)),
       ),
       eventData: Event(
-        title: 'Consultorio ${getID()}',
-        description: 'C 3',
-        color: getRadomColor(),
-      ),
-    ),
-    CalendarEvent<Event>(
-      dateTimeRange: DateTimeRange(
-        start: now,
-        end: now.add(Duration(hours: 1)),
-      ),
-      eventData: Event(
-        title: 'Consultorio ${getID()}',
-        description: 'C 4',
-        color: getRadomColor(),
+        title: 'Evento ${getID()}',
+        description: '',
+        consultorio: getRadomConsultorio(),
       ),
     ),
   ]);

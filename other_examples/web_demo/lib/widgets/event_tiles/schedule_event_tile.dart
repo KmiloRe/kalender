@@ -14,7 +14,7 @@ class ScheduleTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: event.eventData?.color ?? Colors.blue,
+      color: event.eventData?.consultorio!.color ?? Colors.blue,
       child: ListTile(
         title: Text(event.eventData?.title ?? ''),
         subtitle: Text(

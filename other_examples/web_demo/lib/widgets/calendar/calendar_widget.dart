@@ -61,9 +61,13 @@ class _CalendarWidgetState extends State<CalendarWidget> {
   CalendarEvent<Event> onEventCreate(DateTimeRange dateTimeRange) {
     return CalendarEvent<Event>(
       dateTimeRange: dateTimeRange,
+      //util: valores por deefault de creacion de nuevo evento
       eventData: Event(
         title: 'Nuevo Evento',
-        color: Colors.blue,
+        profesional: 'Profesional',
+        consultorio: Consultorio.consultorio_1,
+        // color: Consultorio.consultorio_1.color,
+        description: '',
       ),
     );
   }

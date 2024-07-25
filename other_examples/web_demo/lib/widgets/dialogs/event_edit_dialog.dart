@@ -85,21 +85,21 @@ class _EventEditDialogState extends State<EventEditDialog> {
         ),
         Row(
           children: [
-            DropdownMenu<Color>(
-              label: const Text('Color'),
-              initialSelection: widget.event.eventData?.color ?? Colors.blue,
-              dropdownMenuEntries: const [
-                DropdownMenuEntry(value: Colors.blue, label: 'azul'),
-                DropdownMenuEntry(value: Colors.green, label: 'verde'),
-                DropdownMenuEntry(value: Colors.red, label: 'rojo'),
-                DropdownMenuEntry(value: Colors.orange, label: 'naranja'),
-              ],
-              onSelected: (value) {
-                if (value == null) return;
-                widget.event.eventData =
-                    widget.event.eventData?.copyWith(color: value);
-              },
-            )
+            // DropdownMenu<Color>(
+            //   label: const Text('Color'),
+            //   initialSelection: widget.event.eventData?.color ?? Colors.blue,
+            //   dropdownMenuEntries: const [
+            //     DropdownMenuEntry(value: Colors.blue, label: 'azul'),
+            //     DropdownMenuEntry(value: Colors.green, label: 'verde'),
+            //     DropdownMenuEntry(value: Colors.red, label: 'rojo'),
+            //     DropdownMenuEntry(value: Colors.orange, label: 'naranja'),
+            //   ],
+            //   onSelected: (value) {
+            //     if (value == null) return;
+            //     widget.event.eventData =
+            //         widget.event.eventData?.copyWith(color: value);
+            //   },
+            // )
           ],
         ),
         const Divider(),
