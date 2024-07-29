@@ -1,14 +1,4 @@
-import 'dart:io';
-
-import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
-import 'package:kalender/kalender.dart';
-import 'package:web_demo/models/event.dart';
-import 'package:web_demo/widgets/dialogs/event_edit_dialog.dart';
-import 'package:web_demo/widgets/dialogs/new_event_dialog.dart';
-import 'package:web_demo/widgets/event_tiles/event_tile.dart';
-import 'package:web_demo/widgets/event_tiles/multi_day_event_tile.dart';
-import 'package:web_demo/widgets/event_tiles/schedule_event_tile.dart';
+part of '../kalender_widgets.dart';
 //todo k: change this to consumer stateful widget
 
 class CalendarWidget extends StatefulWidget {

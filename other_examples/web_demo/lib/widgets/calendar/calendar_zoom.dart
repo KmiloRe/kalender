@@ -1,9 +1,4 @@
-import 'dart:ui';
-
-import 'package:flutter/gestures.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:kalender/kalender.dart';
+part of '../kalender_widgets.dart';
 
 class CalendarZoomDetector extends StatefulWidget {
   const CalendarZoomDetector({

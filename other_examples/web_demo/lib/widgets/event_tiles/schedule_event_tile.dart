@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:kalender/kalender.dart';
-import 'package:web_demo/models/event.dart';
+part of '../kalender_widgets.dart';
 
 class ScheduleTile extends StatelessWidget {
   const ScheduleTile({

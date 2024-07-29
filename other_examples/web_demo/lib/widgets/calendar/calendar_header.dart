@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
-import 'package:kalender/kalender.dart';
+part of '../kalender_widgets.dart';
 
 class CalendarHeader extends StatelessWidget {
   const CalendarHeader({

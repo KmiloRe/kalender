@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:kalender/kalender.dart';
+part of '../kalender_widgets.dart';
 
 class ViewConfigurationCustomize extends StatelessWidget {
   const ViewConfigurationCustomize({

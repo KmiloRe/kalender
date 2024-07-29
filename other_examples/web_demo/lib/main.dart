@@ -5,14 +5,15 @@ import 'package:intl/find_locale.dart';
 import 'package:intl/intl.dart';
 import 'package:web_demo/models/event.dart';
 import 'package:web_demo/functions/generate_calendar_events.dart';
-import 'package:web_demo/widgets/calendar/calendar_header.dart';
-import 'package:web_demo/widgets/calendar/calendar_widget.dart';
+// import 'package:web_demo/widgets/calendar/calendar_header.dart';
+// import 'package:web_demo/widgets/calendar/calendar_widget.dart';
 import 'package:web_demo/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:kalender/kalender.dart';
-import 'package:web_demo/widgets/calendar/calendar_zoom.dart';
-import 'package:web_demo/widgets/customize/calendar_customize.dart';
-import 'package:web_demo/widgets/customize/view_customize.dart';
+// import 'package:web_demo/widgets/calendar/calendar_zoom.dart';
+// import 'package:web_demo/widgets/customize/calendar_customize.dart';
+// import 'package:web_demo/widgets/customize/view_customize.dart';
+import 'package:web_demo/widgets/kalender_widgets.dart';
 
 void main() async {
   //util: es con esto que puedo adaptar el idioma según la configuración del sistemas
@@ -104,7 +105,9 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     super.initState();
+    // List<CalendarEvent<Event>> events = [];
     eventsController.addEvents(generateCalendarEvents());
+    //eventsController.addEvents(events);
     calendarComponents = CalendarComponents(
       calendarHeaderBuilder: _calendarHeaderBuilder,
       calendarZoomDetector: _calendarZoomDetectorBuilder,

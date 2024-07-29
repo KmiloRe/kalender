@@ -1,26 +1,7 @@
-import 'package:web_demo/models/event.dart';
-import 'package:web_demo/widgets/dialogs/date_time_range_editor.dart';
-import 'package:flutter/material.dart';
-import 'package:kalender/kalender.dart';
+part of '../kalender_widgets.dart';
 
 //todo k: I think this is unnecessary, maybe just use the enum from Event
 //? duda jose: should I use the enum from Event?
-List<Consultorio> consultorios = [
-  Consultorio.consultorio_1,
-  Consultorio.consultorio_2,
-  Consultorio.consultorio_3,
-  Consultorio.consultorio_4,
-  Consultorio.consultorio_5,
-  Consultorio.consultorio_6,
-  Consultorio.consultorio_7,
-  Consultorio.consultorio_8,
-  Consultorio.consultorio_9,
-  Consultorio.consultorio_10,
-  Consultorio.consultorio_11,
-  Consultorio.consultorio_12,
-  Consultorio.ninguno,
-  Consultorio.administracion
-];
 
 class NewEventDialog extends StatefulWidget {
   const NewEventDialog({

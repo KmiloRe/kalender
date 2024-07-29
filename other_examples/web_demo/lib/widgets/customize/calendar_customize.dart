@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:kalender/kalender.dart';
-import 'package:web_demo/models/event.dart';
-import 'package:web_demo/widgets/customize/theme_tile.dart';
+part of '../kalender_widgets.dart';
 
 class CalendarCustomize extends StatefulWidget {
   const CalendarCustomize({

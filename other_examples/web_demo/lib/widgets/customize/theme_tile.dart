@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:web_demo/main.dart';
+part of '../kalender_widgets.dart';
 
 class ThemeTile extends StatelessWidget {
   const ThemeTile({super.key});

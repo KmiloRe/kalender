@@ -1,6 +1,4 @@
-import 'package:web_demo/models/event.dart';
-import 'package:flutter/material.dart';
-import 'package:kalender/kalender.dart';
+part of '../kalender_widgets.dart';
 
 class EventTile extends StatelessWidget {
   const EventTile({

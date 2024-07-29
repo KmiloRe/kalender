@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+part of '../kalender_widgets.dart';
 
 class DateTimeRangeEditor extends StatelessWidget {
   const DateTimeRangeEditor({
