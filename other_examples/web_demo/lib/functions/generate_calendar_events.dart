@@ -44,7 +44,6 @@ List<CalendarEvent<Event>> generateCalendarEvents() {
   int x = 0;
 
   String getID() {
-    print(x);
     x++;
     return x.toString();
   }
